@@ -20,32 +20,34 @@ const Headers = () => {
         <ul className="nav-link">
           <Link to="/" className="a-link1">
       
-            <li className="home" >
+            <li className={`home ${activeIcon === 'home' ?'active':''}`} onClick={()=>fetchIcon('home')} >
               <FaChalkboard className={`icon ${activeIcon === 'home' ?'active':''}`} onClick={()=>fetchIcon('home')} />
               <span>Home</span>
             </li>
           </Link>
           <Link to="/about" className="a-link1" >
-            <li className="about">
-              <FaRegAddressCard className={`icon ${activeIcon === 'about' ? 'active' : ''}`} onClick={() => fetchIcon('about')} />
-              
-             <span>ABOUT</span>
+            <li className={`about ${activeIcon === 'about' ? 'active' : ""} `}
+            onClick={()=>fetchIcon('about')}
+            >
+            <FaRegAddressCard className="icon icon1" /> <span>ABOUT</span>
           </li>
           </Link>
          <Link className="a-link1" to="/skills"> 
-            <li className="skills">
-            <FaCode  className={`icon ${activeIcon === 'skills' ?'active':''}`} onClick={()=>fetchIcon('skills')} /> <span>SKILLS</span>{" "}
+            <li className={`skills ${activeIcon === 'skills' ? 'active' : ""} `}
+            onClick={()=>fetchIcon("skills")}
+            >
+            <FaCode className="icon" /> <span>SKILLS</span>{" "}
             </li>
           </Link>
           <Link to="/portfolio" className="a-link1">
           <li className={`portfolio ${activeIcon === 'portfolio'?'active': ''} `} onClick={()=>fetchIcon('portfolio')}>
             
-            <FaGem className="icon" /> <span>PORTFOLIO</span>
+            <FaGem className="icon" /> <span>PORTFOLIO</span>{" "}
             </li>
             </Link>
           <Link to="/contact" className="a-link1">
-            <li className="contact">
-            <FaPaperPlane className={`icon ${activeIcon === 'contact' ?'active':''}`} onClick={()=>fetchIcon('contact')} /> <span>CONTACT</span>
+            <li className={`contact ${activeIcon === 'contact' ? 'active':''}`} onClick={()=>fetchIcon('contact')}>
+            <FaPaperPlane className="icon" /> <span>CONTACT</span>{" "}
             </li>
             </Link>
         </ul>

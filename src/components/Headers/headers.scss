@@ -35,7 +35,7 @@ color: #b8bec3;
     }
    
     .active{
-        box-shadow:0 0 5px #228dff, 0 0 10px #228dff, 0 0 15px #228dff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+        text-shadow:0 0 5px #228dff, 0 0 10px #228dff, 0 0 15px #228dff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
         
         font-weight: 900;
         
@@ -55,7 +55,7 @@ color: #b8bec3;
         justify-content: space-around;
         // background-color: red;
         padding: 15px;
-        border: 1px solid red;
+        // border: 1px solid red;
     }
 li{
     color: white;

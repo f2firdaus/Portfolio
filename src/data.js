@@ -24,12 +24,12 @@ const data = [
   },
   {
     "id": 2,
-    myname:"git find repo",
-    "name": "Repository Finder",
+    myname:"Github Find Repo",
+    "name": " Github Repository Finder",
     "allimage": [scn1,scn2,scn3],
     "image": bg2,
     "description": "A repository finder application that allows users to search for their repo  featuring a clean user interface.",
-    "techStack": ["React.js", "Firebase", "Material-UI"],
+    "techStack": ["React.js", "HTML", "CSS"],
     "project-link":"https://wondrous-trifle-74c17f.netlify.app/"
   },
   {
@@ -39,27 +39,9 @@ const data = [
     "image": crypto1,
     "allimage": [crypto1,crypto2],
     "description": "A Crypto Currency Tracker dashboard that fetches and displays live data for different crypto, providing current prices.",
-    "techStack": ["React.js","CSS"],
+    "techStack": ["React.js","CSS","HTML"],
     "project-link":"https://cryptotrackerin.netlify.app/"
-  },
-  {
-    "id": 4,
-    myname:"Headphone Ecom Store",
-    "name": "Weather Dashboard",
-    "image": "https://example.com/weather-app.png",
-    "description": "A weather dashboard that fetches and displays weather data for different locations, providing current conditions and forecasts.",
-    "techStack": ["React.js", "OpenWeatherMap API", "CSS"],
-    "project-link":"https://headphone-store-1.netlify.app/"
-  },
-  {
-    "id": 5,
-    myname:"Headphone Ecom Store",
-    "name": "Weather Dashboard",
-    "image": "https://example.com/weather-app.png",
-    "description": "A weather dashboard that fetches and displays weather data for different locations, providing current conditions and forecasts.",
-    "techStack": ["React.js", "OpenWeatherMap API", "CSS"],
-    "project-link":"https://headphone-store-1.netlify.app/"
-  },
+  }
 
 ]
 
