@@ -1,7 +1,10 @@
 
+import { useNavigate } from 'react-router-dom';
 import './home.scss'
 import { FaLinkedin,FaGithub,FaTwitter,FaInstagram } from "react-icons/fa";
 const Home = () => {
+
+  const navigate=useNavigate()
   return (
       <>
       <div className="main-home">
@@ -10,7 +13,7 @@ const Home = () => {
           
             <p className='details'>i am a software engineer and a fullstack developer</p>
           <div className="btn">
-            <button>contact me</button>
+            <button  onClick={()=>navigate('/contact')}>contact me</button>
           </div>  
         </div>
         <div className='bottom-link'>
