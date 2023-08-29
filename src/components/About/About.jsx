@@ -14,7 +14,7 @@ const About = () => {
                     </div>
                     <div className="btn">
                         <button>
-                            <a href="https://drive.google.com/file/d/15KGW7k2aj55Sn0IKhUIxvxpzr59KZxRR/view?usp=sharing" target='blank'>view Resume</a>
+                            <a href="https://drive.google.com/file/d/1n0g1rrClaiPXTyUPYiquOXa2Mx4Sc3Jn/view?usp=sharing" target='blank'>view Resume</a>
                         </button>
                  </div>
                 </div>
