@@ -1,5 +1,7 @@
 import './about.scss'
 // import img from '../../assets/bg.jpg'
+import firdausnaseem from '../../assets/Firdausnaseem.pdf'
+import { Link } from 'react-router-dom';
 const About = () => {
     
     return (
@@ -14,7 +16,7 @@ const About = () => {
                     </div>
                     <div className="btn">
                         <button>
-                            <a href="https://drive.google.com/file/d/1n0g1rrClaiPXTyUPYiquOXa2Mx4Sc3Jn/view?usp=sharing" target='blank'>view Resume</a>
+                            <a href={firdausnaseem} target='blank' download> Download Resume</a>
                         </button>
                  </div>
                 </div>

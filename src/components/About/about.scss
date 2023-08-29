@@ -40,8 +40,9 @@ color: #fff;
                 width: 180px;
                 text-transform: uppercase;
                line-height:50px;
-               letter-spacing: 2px;
-               background: none;
+              //  letter-spacing: 2px;
+            
+            background: none;
                text-decoration: none;
                border: 1px solid white;
                color: #fff;
@@ -49,11 +50,11 @@ color: #fff;
                font-weight: 800;
                box-shadow:0 0 4px hsla(0,0%,100%,.55), 0 0 30px hsla(0,0%,100%,0), 0 0 80px black;;
                text-shadow:0 0 4px hsla(0,0%,100%,.55), 0 0 30px hsla(0,0%,100%,0), 0 0 80px #fff;
-              a{
-                text-decoration: none;
-                color: white;
-              }
-              }
+             }
+             a{
+              text-decoration: none;
+              color: white;
+             }
         }
 
         .about-details{
