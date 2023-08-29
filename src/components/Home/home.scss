@@ -1,0 +1,126 @@
+ 
+ $mobile:"only screen and (max-width : 667px)";
+.main-home{
+    width: 100%;
+    position: relative;
+    
+
+    flex-direction: column;
+    display: flex;
+    
+  height: 98vh;
+    // background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    @media #{$mobile}{
+    height: 100vh;
+    padding: 10px;
+    width: 100%;
+
+    }
+    .fullname{
+        margin-bottom: 40px;
+        
+        h1{
+            font-size: 3rem;
+            margin: 20px;
+
+            font-weight: 900;
+            color: #fff;
+            position: relative;
+            top: -100px;
+            animation: slideDown 2s ease-in-out forwards, fadeIn 4s ease-in-out forwards;
+            
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-shadow: 0 0 4px hsla(0,0%,100%,.55), 0 0 30px hsla(0,0%,100%,0), 0 0 80px #fff;
+            text-align: center;
+        }
+        .details{
+            letter-spacing: 10px;
+            // width: 1100px;
+            animation: fadeIn 2s ease-in-out;
+            text-transform: uppercase;
+            @media #{$mobile} {
+              text-align: center;
+            }
+            
+        }
+        .btn{
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            button{
+                margin-top: 40px;
+                position: relative;
+                width: 180px;
+                text-transform: uppercase;
+               line-height:50px;
+               letter-spacing: 2px;
+               background: none;
+               border: 1px solid white;
+               color: #fff;
+               animation: buttonSlide 2s ease-in-out forwards;
+               font-weight: 800;
+               box-shadow:0 0 4px hsla(0,0%,100%,.55), 0 0 30px hsla(0,0%,100%,0), 0 0 80px black;
+               text-shadow:0 0 4px hsla(0,0%,100%,.55), 0 0 30px hsla(0,0%,100%,0), 0 0 80px #fff;
+            }
+        }
+    }
+    .bottom-link{
+        // color: white;
+
+        position: fixed;
+        // top: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 15px;
+        font-size: 24px;
+        right: 0;
+        animation: slideUp 2s ease-in-out forwards;
+        text-align: center;
+        margin: 0 auto;
+        a{
+            cursor: pointer;
+            color: inherit;
+        }
+    } 
+}
+
+
+@keyframes slideDown {
+    0% {
+      top: -100px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @keyframes buttonSlide {
+    0%{
+        bottom: -100px;
+    }
+    100%{
+        bottom: 0px;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes slideUp {
+    0%{
+        bottom: -300px;
+    }
+    100%{
+        bottom: -180px;
+    }
+  }

@@ -1,0 +1,107 @@
+ 
+ $mobile:"only screen and (max-width : 667px)";
+ .main-head{
+    width: 100%;
+    background-color: #212629;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 10;
+    position: fixed;
+
+    @media #{$mobile} {
+  display: flex;
+//   gap: 80px;
+font-size: 2rem;
+justify-content: space-between;
+align-items:space-between;
+  
+//   background-color: red;
+ 
+    }
+    
+    .nav-link{
+        width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    padding: 14px;
+color: #b8bec3;
+    list-style-type: none;
+  animation: headerSlide 3s ease-in-out forwards;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    .icon{
+        font-size: 1.4rem;
+    }
+   
+    .active{
+        box-shadow:0 0 5px #228dff, 0 0 10px #228dff, 0 0 15px #228dff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+        
+        font-weight: 900;
+        
+    
+    }
+  
+    .a-link1{
+        text-decoration: none;
+    }
+    .active{
+        
+        // background-color: red;
+        // text-shadow:0 0 5px #228dff, 0 0 10px #228dff, 0 0 15px #228dff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+        // color: #fff;
+    }
+    
+    .about{
+        text-decoration: none;
+    }
+    @media #{$mobile}{
+        display: flex;
+        justify-content: space-around;
+        // background-color: red;
+        padding: 15px;
+        border: 1px solid red;
+    }
+li{
+    color: white;
+
+}
+    .home ,.about,.skills,.portfolio,.contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        color: #fff;
+        opacity: 0.8;
+        font-size: 1rem;
+        cursor: pointer;
+
+    
+        @media #{$mobile} {
+            span{
+                display: none;
+
+            }
+          //   background-color: red;
+           
+              }
+   
+        // border:1px solid black
+    }
+    .home:active{
+       
+        box-shadow:0 0 4px hsla(0,0%,100%,.55), 0 0 30px hsla(0,0%,100%,0), 0 0 80px black;
+    }
+    }
+ }
+ 
+ @keyframes headerSlide {
+    0%{
+        top: -80px;
+    }
+    100%{
+        top: 0px;
+    }
+ }
+ $small:450px;
+ 
