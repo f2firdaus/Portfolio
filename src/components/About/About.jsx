@@ -1,7 +1,7 @@
 import './about.scss'
 // import img from '../../assets/bg.jpg'
-import firdausnaseem from '../../assets/Firdausnaseem.pdf'
-import { Link } from 'react-router-dom';
+import firdausnaseem from '../../assets/Firdaus_naseem.pdf'
+// import { Link } from 'react-router-dom';
 const About = () => {
     
     return (
