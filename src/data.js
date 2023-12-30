@@ -30,7 +30,7 @@ const data = [
     "image": bg2,
     "description": "A repository finder application that allows users to search for their repo  featuring a clean user interface.",
     "techStack": ["React.js", "HTML", "CSS"],
-    "project-link":"https://wondrous-trifle-74c17f.netlify.app/"
+    "project-link":"https://sage-valkyrie-a5e338.netlify.app/"
   },
   {
     "id": 3,
