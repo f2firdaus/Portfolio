@@ -134,6 +134,8 @@ object-fit: contain;
 }
 .live-preview{
   position: relative;
+  display: flex;
+  gap: 20px;
   /* width: 180px; */
   /* border: 1px solid red; */
 }
