@@ -1,8 +1,8 @@
 import "./portfolio.scss";
-import headphone from "../../assets/project1/headphone.png";
+
 import { useState } from "react";
-import PortfolioDetails from "./PortfolioDetails";
-import { Link, useParams } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 import data from "../../data";
 const Portfolio = () => {
   // const {id} =useParams()
@@ -30,7 +30,9 @@ const Portfolio = () => {
                     onClick={() => setPortfolioDetails(false)}
                     src={item.image}
                     alt=""
-                    width={320}
+                    width={350}
+                    height={250}
+                    className="landing-img"
                   />
                 </Link>
               </div>

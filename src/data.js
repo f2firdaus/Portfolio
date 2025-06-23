@@ -16,10 +16,26 @@ import chats from './assets/project4/chats.png'
 import group_chat from './assets/project4/group_chat.png'
 import message from './assets/project4/message.png'
 import chat_profile from './assets/project4/profile.png'
+import landing from './assets/project5/landing.png'
+import img1 from './assets/project5/img1.png'
+import signup from './assets/project5/signup.png'
 
 const data = [
+
   {
     "id": 1,
+    myname:"Storage Managment App",
+    "name": "File Hosting",
+    image:landing,
+    "allimage": [landing,signup,img1],
+    "description": "An online store for buying and selling products, with user authentication, product catalog, and shopping cart functionality.",
+    "techStack": ["NextJs ", "Pusher","Tailwind CSS","Next Auth"],
+    "project-link": "https://store-ease-nu.vercel.app/",
+    "source-code":"https://github.com/f2firdaus/storeEase"
+  },
+
+  {
+    "id": 2,
     myname:"Real Time Chat App",
     "name": "chat app",
     image:chat_signup,
@@ -30,7 +46,7 @@ const data = [
     "source-code":"https://github.com/f2firdaus/InstaChat/"
   },
   {
-    "id": 2,
+    "id": 3,
     myname:"Headphone Ecom Store",
     "name": "E-commerce Website",
     image:bg1,
@@ -41,7 +57,7 @@ const data = [
     "source-code":"https://github.com/f2firdaus/Headphone-store"
   },
   {
-    "id": 3,
+    "id": 4,
     myname:"Github Find Repo",
     "name": " Github Repository Finder",
     "allimage": [scn1,scn2,scn3],
@@ -53,7 +69,7 @@ const data = [
     
   },
   {
-    "id": 4,
+    "id": 5,
     myname:"Crypto Tracker",
     "name": "Crypto Currency Tracker",
     "image": crypto1,
