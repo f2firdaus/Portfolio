@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./portfoliodetails.css";
 import data from "../../data";
 import { useNavigate, useParams } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
-import bg1 from "../../assets/project2/sc1.png";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight, FiExternalLink, FiGithub } from "react-icons/fi";
 
 const PortfolioDetails = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,10 +11,16 @@ const PortfolioDetails = () => {
   const navigate = useNavigate();
 
   const filtered = data.find((item) => item.id == id);
-  console.log(filtered);
+
+  if (!filtered) {
+    return (
+      <div className="portfolio-details-modal">
+        <div className="error-message">Project not found</div>
+      </div>
+    );
+  }
 
   const imageLength = filtered.allimage ? filtered.allimage.length : 0;
-  console.log(imageLength);
 
   const nextSlide = () => {
     setCurrentIndex((currentIndex + 1) % imageLength);
@@ -26,71 +31,88 @@ const PortfolioDetails = () => {
   };
 
   return (
-    <>
-      <div className="portfolio-details-1">
-        <p className="close-port">
-          <AiOutlineClose
-            className="close-port1"
-            onClick={() => navigate("/portfolio")}
-          />
-        </p>
-        <div className="section-details">
-          <div className="carousel">
-            <div className="left-carousel">
-              <span onClick={prevSlide}>
+    <div className="portfolio-details-modal">
+      <div className="modal-backdrop" onClick={() => navigate("/portfolio")}></div>
+      <div className="modal-content">
+        <button
+          className="close-button"
+          onClick={() => navigate("/portfolio")}
+          aria-label="Close details"
+        >
+          <AiOutlineClose />
+        </button>
+
+        <div className="details-layout">
+          <div className="carousel-container">
+            {imageLength > 1 && (
+              <button className="nav-btn prev-btn" onClick={prevSlide}>
                 <FiArrowLeft />
-              </span>
-            </div>
-            {filtered.allimage &&
-              filtered.allimage.map((img, idx) => (
-                <img
+              </button>
+            )}
+
+            <div className="image-track">
+              {filtered.allimage && filtered.allimage.map((img, idx) => (
+                <div
                   key={idx}
-                  className={
-                    currentIndex === idx
-                      ? "image-carousel"
-                      : "image-carousel img_hiddenCarousel"
-                  }
-                  src={img}
-                  alt=""
-                />
+                  className={`slide ${currentIndex === idx ? 'active' : ''}`}
+                >
+                  <img src={img} alt={`Slide ${idx + 1}`} />
+                </div>
               ))}
-            <div className="right-carousel">
-              <span onClick={nextSlide}>
-                <FiArrowRight />
-              </span>
             </div>
+
+            {imageLength > 1 && (
+              <button className="nav-btn next-btn" onClick={nextSlide}>
+                <FiArrowRight />
+              </button>
+            )}
+
+            {imageLength > 1 && (
+              <div className="slide-indicators">
+                {filtered.allimage.map((_, idx) => (
+                  <span
+                    key={idx}
+                    className={`dot ${currentIndex === idx ? 'active' : ''}`}
+                    onClick={() => setCurrentIndex(idx)}
+                  ></span>
+                ))}
+              </div>
+            )}
           </div>
-          <div className="portfolio-content">
-            <span className="project-name">{filtered.myname}</span>
-            <span className="project-name1">{filtered.name}</span>
-            <p className="desc-filtered">{filtered.description}</p>
-            <p className="techstack">
-              {filtered.techStack.map((skill, idx) => (
-                <span className="techstack1" key={idx}>
-                  {skill}
-                </span>
-              ))}
-            </p>
-            <div className="live-preview">
-              <a
-                className="a-link"
-                href={filtered["project-link"]}
-                target="blank"
-              >
-                Live Preview
-              </a>
-              <a
-                className="a-link"
-                href={filtered["source-code"]}
-                target="blank"
-              >
-                Source Code
-              </a>
+
+          <div className="info-container">
+            <span className="project-category">{filtered.name}</span>
+            <h2 className="project-title">{filtered.myname}</h2>
+
+            <div className="project-description">
+              <p>{filtered.description}</p>
+            </div>
+
+            <div className="tech-stack">
+              <h3>Technologies</h3>
+              <div className="tags">
+                {filtered.techStack.map((skill, idx) => (
+                  <span className="tag" key={idx}>{skill}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="action-links">
+              {filtered["project-link"] && (
+                <a className="btn primary-btn" href={filtered["project-link"]} target="_blank" rel="noopener noreferrer">
+                  <FiExternalLink className="btn-icon" /> Live Preview
+                </a>
+              )}
+              {filtered["source-code"] && (
+                <a className="btn secondary-btn" href={filtered["source-code"]} target="_blank" rel="noopener noreferrer">
+                  <FiGithub className="btn-icon" /> Source Code
+                </a>
+              )}
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

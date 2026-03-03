@@ -1,86 +1,261 @@
-$mobile: "only screen and (max-width : 667px)";
+$mobile: "only screen and (max-width : 850px)";
+$small: "only screen and (max-width : 480px)";
+
 .about-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-
-  position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  .about-me {
-    display: flex;
-    width: 800px;
-    gap: 30px;
-    color: #fff;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h1 {
-      animation: slideDown 2s ease-in-out forwards;
-      position: relative;
-      font-size: 2rem;
+  padding: 8rem 2rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-      font-weight: 900;
-      color: #fff;
-      position: relative;
-      top: -100px;
+  .about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 1200px;
+
+    .subtitle {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 5px;
-      text-shadow: 0 0 4px hsla(0, 0%, 100%, 0.55),
-        0 0 30px hsla(0, 0%, 100%, 0), 0 0 80px #fff;
-      text-align: center;
-    }
-    .btn {
-      position: relative;
-      button {
-        margin-top: 40px;
-        position: relative;
-        width: 180px;
-        text-transform: uppercase;
-        line-height: 50px;
-
-        background: none;
-        text-decoration: none;
-        border: 1px solid white;
-        color: #fff;
-        animation: buttonSlide 2s ease-in-out forwards;
-        font-weight: 800;
-        box-shadow: 0 0 4px hsla(0, 0%, 100%, 0.55),
-          0 0 30px hsla(0, 0%, 100%, 0), 0 0 80px black;
-        text-shadow: 0 0 4px hsla(0, 0%, 100%, 0.55),
-          0 0 30px hsla(0, 0%, 100%, 0), 0 0 80px #fff;
-      }
-      a {
-        text-decoration: none;
-        color: white;
-      }
+      letter-spacing: 3px;
+      color: #00f2fe;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: slideUpFade 1s ease-out forwards;
     }
 
-    .about-details {
-      font-size: 1.2rem;
-      display: flex;
-      opacity: 0.8;
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      background: linear-gradient(90deg, #fff 0%, #a5b4fc 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      opacity: 0;
+      animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+
       @media #{$mobile} {
-        text-align: center;
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .about-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+
+    @media #{$mobile} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$small} {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .bento-card {
+    background: rgba(20, 20, 25, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+    &:hover {
+      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.02);
+      transform: translateY(-5px);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .bio-card {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.3) 100%);
+    animation-delay: 0.3s;
+
+    @media #{$mobile} {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    @media #{$small} {
+      grid-column: span 1;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .stat-card {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    animation-delay: 0.4s;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png'), rgba(15, 23, 42, 0.5);
+
+    &:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+
+    .icon-wrapper {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: rgba(59, 130, 246, 0.1);
+      color: #3b82f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-content {
+      h4 {
+        color: #94a3b8;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+      }
+
+      .highlight {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #f8fafc;
+        margin-bottom: 0.5rem;
+      }
+
+      .detail {
+        color: #cbd5e1;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .vision-card {
+    grid-column: span 3;
+    grid-row: span 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(124, 58, 237, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    animation-delay: 0.6s;
+
+    @media #{$mobile} {
+      grid-column: span 2;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    @media #{$small} {
+      grid-column: span 1;
+    }
+
+    .vision-content {
+      flex: 1;
+      max-width: 700px;
+
+      p {
+        color: #cbd5e1;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        font-weight: 300;
+      }
+    }
+
+    .download-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+      border-radius: 50px;
+      border: none;
+      white-space: nowrap;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 1;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
+        z-index: -1;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(6, 182, 212, 0.5);
+
+        &::before {
+          opacity: 1;
+        }
       }
     }
   }
 }
 
-@keyframes slideDown {
-  0% {
-    top: -100px;
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  100% {
-    top: 0;
-  }
-}
-@keyframes buttonSlide {
-  0% {
-    bottom: -100px;
-  }
-  100% {
-    bottom: 0px;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
