@@ -81,7 +81,7 @@ $small: "only screen and (max-width : 480px)";
     overflow: hidden;
     position: relative;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2);
 
     /* Bento Sizing Classes */
     &.bento-large {
