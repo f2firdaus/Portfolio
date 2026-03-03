@@ -46,7 +46,7 @@ const Home = () => {
           <div className="globe-icon"><FaLocationArrow /></div>
           <div>
             <h3>Based in</h3>
-            <p className="highlight">Pune, India</p>
+            <p className="highlight">Hyderabad, India</p>
           </div>
           <div className="time-indicator">
             <span className="pulsing-dot"></span> Remote Work Friendly
