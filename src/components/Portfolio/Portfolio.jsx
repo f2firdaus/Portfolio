@@ -25,23 +25,23 @@ const Portfolio = () => {  // Helper to determine bento grid class size based on
               className={`bento-card project-card ${getBentoClass(index)}`}
             >
               <Link to={`/portfolio/${item.id}`} className="portfolio-link">
-                <div className="image-wrapper">
-                  <img
-                    src={item.image}
-                    alt={item.myname || "Portfolio Project"}
-                    className="portfolio-img"
-                  />
-
-                  <div className="project-info-overlay">
-                    <div className="text-content">
-                      <span className="project-category">{item.name}</span>
-                      <h3>{item.myname}</h3>
-                    </div>
+                <div className="card-inner">
+                  <div className="project-info">
+                    <span className="project-category">{item.name}</span>
+                    <h3>{item.myname}</h3>
                     <div className="tech-tags">
                       {item.techStack && item.techStack.slice(0, 3).map((tech, i) => (
                         <span key={i} className="tag">{tech}</span>
                       ))}
                     </div>
+                  </div>
+
+                  <div className="image-container">
+                    <img
+                      src={item.image}
+                      alt={item.myname || "Portfolio Project"}
+                      className="portfolio-img"
+                    />
                   </div>
 
                   <div className="hover-action">
